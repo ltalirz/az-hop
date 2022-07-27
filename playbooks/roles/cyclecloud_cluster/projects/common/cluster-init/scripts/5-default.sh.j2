@@ -27,5 +27,8 @@ esac
 
 # Create a symlink for the Modules to allow compatibility with the HPC CentOS image which have Modules in capital case
 if [ ! -d /usr/share/Modules ]; then
-    ln -s /usr/share/modules /usr/share/Modules
+    ln -s /usr/share/modulefiles /usr/share/Modules/modulefiles
 fi
+
+# Add modulefiles from HPC CentOS image to module path
+export MODULEPATH=$MODULEPATH:/usr/share/Modules/modulefiles/
